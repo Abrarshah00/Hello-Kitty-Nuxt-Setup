@@ -15,7 +15,13 @@
     "lintfix": "prettier --write --list-different . && npm run lint:js --fix",
     "test": "vitest",
     "test:watchfalse": "vitest run",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-staged": {
+      "**/*.{js,jsx,ts,tsx}": [
+        "npx prettier --write",
+        "npx eslint --fix"
+      ]
+    }
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -28,12 +34,13 @@
     "eslint": "^8.45.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-prettier": "^5.0.0",
+    "husky": "^8.0.0",
     "jsdom": "^22.1.0",
+    "lint-staged": "^13.2.3",
     "nuxt": "^3.6.2",
     "prettier": "^3.0.0",
     "typescript": "^5.1.6",
-    "vitest": "^0.33.0",
-    "husky": "^8.0.0"
+    "vitest": "^0.33.0"
   },
   "dependencies": {
     "eslint-plugin-vitest": "^0.2.6"

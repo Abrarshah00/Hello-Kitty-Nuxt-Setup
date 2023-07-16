@@ -3,7 +3,8 @@
 
 set -e
 
-npm run lint
+# npm run lint
+npx lint-staged
 npm run nuxiTypeCheck
 
 # Run tests once
